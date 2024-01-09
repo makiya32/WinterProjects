@@ -16,19 +16,22 @@ public class NumberGuessingGame {
     public static void guessingNumGame(){
               
         Scanner scan = new Scanner(System.in);
-        int compNum = 1 + (int)(10 * Math.random());
+        int compNum = 1 + (int)(10 * Math.random());//generates random number between 1-10
         
         System.out.println("Enter your number guess between 1-10, you have 3 chances: ");
         int userGuess = scan.nextInt();
         
-System.out.println("THE COMPUTER NUM::::::: " + compNum);
+        
+        //System.out.println("THE COMPUTER NUM::::::: " + compNum); //Just for testing:
 
         int tries = 2;
         while(userGuess != compNum && tries > 0){
                 System.out.printf("You have %d tries left\n", tries);
 
-                
-                //IF STATEMENTS WORK
+                /**
+                This if else statement gives direction to the user if they 
+                need to guess greater or lower:
+                **/
                 if (userGuess > compNum){
                    System.out.println("Try a number lower then that");
                    userGuess = scan.nextInt();
@@ -43,12 +46,12 @@ System.out.println("THE COMPUTER NUM::::::: " + compNum);
                 break;
                 }
                 
-               //WORKS:
+               //When the user has not guessed the number yet:
                if (tries == 0 && userGuess != compNum){
                 System.out.println("You ran out of chances :( ");
                 System.out.println("The number was: " + compNum);
                 }
-                
+               //When user guesses number: 
                if (userGuess == compNum){
                    System.out.println("Good job, its a MATCH!");
                } 
